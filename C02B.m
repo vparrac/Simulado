@@ -14,7 +14,7 @@ iter=0;
 itermax=1000;
 h=1e-7;
 l=0.04;
-fl=ecs(1);
+fl=ecs(l);
 u=1;
 fu=ecs(u);
 
@@ -23,8 +23,8 @@ if fu*fl>0
 end
 
 while err>tol && iter<itermax
-    m=(u+1)/2;
-    fl=ecs(1);
+    m=(u+l)/2;
+    fl=ecs(l);
     fm=ecs(m);
     
     if fl*fm>0
@@ -37,11 +37,11 @@ while err>tol && iter<itermax
     iter=iter+1;
 end
 
-fprintf('El volumen especifico del gas amonio es;');
-fprintf('%7.5f\n\n',Vo);
-fprintf('El numero de iteraciones');
+fprintf('El volumen especifico del gas amonio es ');
+fprintf('%7.5f\n\n',m);
+fprintf('El numero de iteraciones ');
 fprintf('%2.0f\n\n',iter);
-disp(['El error final del metodo es: ',num2str(error),' ']);
+
 end
 
 
