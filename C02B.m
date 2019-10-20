@@ -1,4 +1,4 @@
-%%Complementaria 2
+%%Complementaria 2, Quasi  Newton
 function C02
 clc
 global T P R
@@ -7,7 +7,7 @@ P=56;
 R=0.08206;
 
 
-%Mètodo como tal
+%MÃ¨todo como tal
 tol=1e-6;
 err=100;
 iter=0;
@@ -48,7 +48,7 @@ end
 function der=dersyms(var)
 V=var;
 global P R T
-%Definición de la derivada simbolica
+%DefiniciÃ³n de la derivada simbolica
 syms Vs;
 dersym=diff((R*T)/(Vs-b)-(a)/(T^(1/2)*Vs*(Vs+b))-P,Vs);
 der=double(subs(dersym,Vs,V));
